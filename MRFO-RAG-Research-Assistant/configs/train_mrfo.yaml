@@ -1,0 +1,42 @@
+### 模型配置
+model_name_or_path: Qwen/Qwen2.5-1.5B-Instruct
+quantization_bit: 4
+quantization_method: bitsandbytes
+
+### LoRA配置(改进版)
+finetuning_type: lora
+lora_rank: 16          # ⬅️ 从8改为16
+lora_alpha: 32         # ⬅️ 从16改为32
+lora_dropout: 0.05
+lora_target: all
+
+### 数据集
+dataset: mrfo_dataset
+dataset_dir: ./
+template: qwen
+cutoff_len: 512
+val_size: 0.1
+overwrite_cache: true
+
+### 训练参数(改进版)
+stage: sft
+do_train: true
+output_dir: ./saves/mrfo_lora_v2  # ⬅️ 新文件夹
+overwrite_output_dir: true
+
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8     # ⬅️ 从4改为8
+learning_rate: 5.0e-5              # ⬅️ 从5e-5改为1e-4
+num_train_epochs: 15                # ⬅️ 从3改为5
+
+optim: adamw_torch
+lr_scheduler_type: cosine
+warmup_ratio: 0.15                 # ⬅️ 从0.1改为0.15
+
+logging_steps: 5
+save_steps: 50
+save_total_limit: 2
+
+fp16: true
+report_to: none
+seed: 42

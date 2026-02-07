@@ -1,0 +1,11 @@
+{
+  "mrfo_dataset": {
+    "file_name": "mrfo_training_data_complete.json",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}
