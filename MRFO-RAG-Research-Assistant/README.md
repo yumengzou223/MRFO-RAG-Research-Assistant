@@ -82,15 +82,15 @@ python src/test_finetuned_model_v2.py
 
 \`\`\`
 MRFO-RAG-Research-Assistant/
-├── src/                      # 源代码
+├── src/                              # 源代码
 │   ├── document_processor.py         # PDF处理
 │   ├── local_llm.py                  # LLM封装
 │   ├── advanced_rag_system_v2.py     # RAG系统
 │   ├── prepare_training_data.py      # 数据准备
 │   ├── run_training_v2.py            # 训练脚本
 │   └── test_finetuned_model_v2.py    # 测试脚本
-├── configs/                  # 配置文件
-├── results/                  # 实验结果
+├── configs/                          # 配置文件
+├── results/                          # 实验结果
 └── README.md
 \`\`\`
 
