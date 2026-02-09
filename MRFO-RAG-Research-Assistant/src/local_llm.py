@@ -65,7 +65,7 @@ class LocalLLM:
             quantization_config=quantization_config,
             device_map=device,  # 自动分配到GPU
             trust_remote_code=True,
-            dtype=torch.float16 if not use_4bit else "auto"
+            torch_dtype=torch.float16 if not use_4bit else "auto"
         )
 
         print("\n✅ 模型加载完成!")
