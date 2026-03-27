@@ -16,7 +16,10 @@ class LocalLLM:
             self,
             model_name: str = "Qwen/Qwen2.5-1.5B-Instruct",
             use_4bit: bool = True,
-            device: str = "auto"
+            device: str = "auto",
+            lora_path: str = None,
+            lora_rank: int = 4,
+            lora_alpha: int = 8
     ):
         """
         初始化本地LLM
@@ -25,6 +28,9 @@ class LocalLLM:
             model_name: 模型名称或路径
             use_4bit: 是否使用4bit量化(节省显存)
             device: 设备("auto", "cuda", "cpu")
+            lora_path: LoRA适配器路径（可选）
+            lora_rank: LoRA rank（必须匹配训练时的rank）
+            lora_alpha: LoRA alpha（必须匹配训练时的alpha）
         """
         print("=" * 60)
         print("🚀 初始化本地大语言模型")
@@ -67,6 +73,13 @@ class LocalLLM:
             trust_remote_code=True,
             torch_dtype=torch.float16 if not use_4bit else "auto"
         )
+
+        # 加载LoRA适配器（如有）
+        if lora_path:
+            print(f"\n🔄 加载LoRA适配器: {lora_path}")
+            from peft import PeftModel
+            self.model = PeftModel.from_pretrained(self.model, lora_path)
+            print("✅ LoRA适配器加载完成!")
 
         print("\n✅ 模型加载完成!")
 

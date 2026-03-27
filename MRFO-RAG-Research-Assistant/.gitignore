@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Conda
+../Library/
+../Scripts/
+../Lib/
+../DLLs/
+../conda-meta/
+../pkgs/
+../Tools/
+../Scripts/
+../etc/
+../include/
+../libs/
+../opt/
+../share/
+../info.exe
+../*.dll
+../*.pdb
+../*.pyc
+../*.pyo
+../*.txt
+
+# IDE
+../.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+../.nonadmin
+../ucrtbase.dll
+../concrt140.dll
+
+# Logs
+*.log
+
+# Temporary
+../*.tmp
+../temp/
