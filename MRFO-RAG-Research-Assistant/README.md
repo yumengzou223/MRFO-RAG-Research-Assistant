@@ -81,7 +81,7 @@ MRFO-RAG-Research-Assistant/
 └── README.md
 ```
 
-## 测试结果
+## 部分测试结果展示
 
 ### Agent智能路由测试 (2026-03-27)
 
@@ -97,7 +97,7 @@ MRFO-RAG-Research-Assistant/
 | N-06 | PAR触发条件 | LoRA模型 | PAR,式(35) | ✅ PASS |
 | C-03 | DLM MRFO改进 | LoRA模型 | 离散,长时记忆 | ✅ PASS |
 
-**最终得分：9/9 (100%)**
+**最终得分：9/9 **
 
 ### 为什么用Agent路由？
 
